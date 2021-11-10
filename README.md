@@ -3,13 +3,13 @@ Juego del tateti desarrollado en Introducción a la Programación (FAI)
 
 ## Materia 2021
 
-Introduccion a la programacion
-tecnicatura desarrollo web
-FAI
-Universidad del Comahue
+  - Introduccion a la Programación
+  - Tecnicatura Universitaria en Desarrollo Web
+  - FAI
+  - Universidad Nacional del Comahue
 
 ## Integrantes del equipo
 
-  -  **Agustin Deve** - legajo 3158 - mail: agustin.deve@est.fi.uncoma.edu.ar - usuario github: agust1nd
-  -  **Gonzalo Marin Parra** - legajo 3598 - mail: gonzalo.marin@est.fi.uncoma.edu.ar - usuario github: gonzalojparra
-  -  **Emiliano Moreno Coppa** - legajo 2844 - mail: emiliano.moreno@est.fi.uncoma.edu.ar - usuario github: Helsek
+  -  **Agustin Deve** - Legajo 3158 - Mail: agustin.deve@est.fi.uncoma.edu.ar - Usuario GitHub: agust1nd
+  -  **Gonzalo Marin Parra** - Legajo 3598 - Mail: gonzalo.marin@est.fi.uncoma.edu.ar - Usuario GitHub: gonzalojparra
+  -  **Emiliano Moreno Coppa** - Legajo 2844 - Mail: emiliano.moreno@est.fi.uncoma.edu.ar - Usuario GitHub: Helsek

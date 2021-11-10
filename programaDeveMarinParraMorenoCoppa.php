@@ -5,8 +5,11 @@ include_once("tateti.php");
 /***** DATOS DE LOS INTEGRANTES *******/
 /**************************************/
 
-/* Apellido, Nombre. Legajo. Carrera. mail. Usuario Github */
-/* ... COMPLETAR ... */
+/** Apellido, Nombre, Legajo, Carrera, Mail, Usuario Github 
+ * Agustin Deve: FAI 3158 - Tec. Des. Web - agustin.deve@est.fi.uncoma.edu.ar - GitHub agust1nd
+ * Gonzalo Marin Parra: FAI 3598 - Tec. Des. Web - gonzalo.marina@est.fi.uncoma.edu.ar - GitHub gonzalojparra
+ * Emiliano Moreno Coppa: FAI 2844 - Tec. Des. Web - emiliano.moreno@est.fi.uncoma.edu.ar - GitHub Helsek
+*/
 
 
 

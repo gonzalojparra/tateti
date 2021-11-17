@@ -120,17 +120,16 @@ function seleccionarOpcion() {
 
 /**
 * Este módulo solicita un número y muestra datos del juego
-* @param int
-* @param array
+* @param array $seleccionJuego
 * @return void
 */
-function mostrarJuego ($numeroDeJuego, $seleccionJuego) {
-    
-    echo "Ingrese el número de juego que desea visualizar";
+function mostrarJuego ($seleccionJuego) {
+    //int $numeroDeJuego
+    echo "Ingrese el número de juego que desea visualizar: ";
     $numeroDeJuego=trim(fgets(STDIN));
     while (!($numeroDeJuego >= 0 && $numeroDeJuego <= 9)){
-        echo "El numero es invalido, debe ser un número entre el 0 y el 9";
-        echo "Vuelva a ingresar un número";
+        echo "El numero es invalido, debe ser un número entre el 0 y el 9\n";
+        echo "Vuelva a ingresar un número\n";
         $numeroDeJuego = trim(fgets(STDIN));
     }
 
@@ -155,8 +154,8 @@ function mostrarJuego ($numeroDeJuego, $seleccionJuego) {
     }
 }
 
-//$a = mostrarJuego(2, 5);
-//echo "" .$a;
+$a = mostrarJuego(5);
+echo "" .$a;
 
 
 

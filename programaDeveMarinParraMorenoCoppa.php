@@ -124,18 +124,10 @@ function seleccionarOpcion() {
 
 /**
 * Este módulo solicita un número y muestra datos del juego
-* @param array $seleccionJuego
+* @param int
+* @param array
 * @return void
 */
-<<<<<<< HEAD
-function mostrarJuego ($seleccionJuego) {
-    //int $numeroDeJuego
-    echo "Ingrese el número de juego que desea visualizar: ";
-    $numeroDeJuego=trim(fgets(STDIN));
-    while (!($numeroDeJuego >= 0 && $numeroDeJuego <= 9)){
-        echo "El numero es invalido, debe ser un número entre el 0 y el 9\n";
-        echo "Vuelva a ingresar un número\n";
-=======
 function mostrarJuego ($numeroDeJuego, $seleccionJuego) {
     
     echo "Ingrese el número de juego que desea visualizar: ";
@@ -143,7 +135,6 @@ function mostrarJuego ($numeroDeJuego, $seleccionJuego) {
     while (!($numeroDeJuego >= 0 && $numeroDeJuego <= 9)) {
         echo "El número es invalido, debe ser un número entre el 0 y 9\n";
         echo "Vuelva a ingresar un número: ";
->>>>>>> 3e1d626e9b1ea28ea9c1c841a6ee372f8a1fad84
         $numeroDeJuego = trim(fgets(STDIN));
     }
 
@@ -168,10 +159,6 @@ function mostrarJuego ($numeroDeJuego, $seleccionJuego) {
     }
 }
 
-<<<<<<< HEAD
-$a = mostrarJuego(5);
-echo "" .$a;
-=======
 /**
 * Módulo que modifica una colección agregando un juego nuevo 
 * @param array $coleccionDeJuegos
@@ -188,7 +175,6 @@ function agregarJuego($juegos, $unJuego) {
 
 //$a = mostrarJuego(2, 5);
 //echo "" .$a;
->>>>>>> 3e1d626e9b1ea28ea9c1c841a6ee372f8a1fad84
 
 
 

@@ -99,14 +99,14 @@ function cargarJuegos() {
 * @return int
 */
 function seleccionarOpcion() {
-
-	echo "MENU DEL JUEGO\n";
-	echo "1) Jugar al tateti\n";
-	echo "2) Mostrar un juego\n";
-	echo "3) Mostrar el primer juego ganador\n";
-	echo "4) Mostrar porcentaje de Juegos ganados\n";
-	echo "5) Mostrar resumen de Jugador\n";
-	echo "6) Mostrar listado de juegos ordenado por jugador O\n";
+    
+    echo "MENU DEL JUEGO\n";
+    echo "1) Jugar al tateti\n";
+    echo "2) Mostrar un juego\n";
+    echo "3) Mostrar el primer juego ganador\n";
+    echo "4) Mostrar porcentaje de Juegos ganados\n";
+    echo "5) Mostrar resumen de Jugador\n";
+    echo "6) Mostrar listado de juegos ordenado por jugador O\n";
     echo "7) Salir\n";
     echo "Elija la opción a la que desea ingresar: ";
     $numero = trim(fgets(STDIN));
@@ -117,9 +117,46 @@ function seleccionarOpcion() {
     }
     return $numero;	
 }
+
+/**
+* Este módulo solicita un número y muestra datos del juego
+* @param int
+* @param array
+* @return void
+*/
+function mostrarJuego ($numeroDeJuego, $seleccionJuego) {
     
-$a = seleccionarOpcion();
-echo "" .$a;
+    echo "Ingrese el número de juego que desea visualizar";
+    $numeroDeJuego=trim(fgets(STDIN));
+    while (!($numeroDeJuego >= 0 && $numeroDeJuego <= 9)){
+        echo "El numero es invalido, debe ser un número entre el 0 y el 9";
+        echo "Vuelva a ingresar un número";
+        $numeroDeJuego = trim(fgets(STDIN));
+    }
+
+    if ($seleccionJuego[$numeroDeJuego]["puntosCruz"] > $seleccionJuego[$numeroDeJuego]["puntosCirculo"]) {
+        echo "******************************\n";
+        echo "Juego TATETI: " .$numeroDeJuego. " (ganó X)\n";
+        echo "Jugador X: " .$seleccionJuego[$numeroDeJuego]["puntosCruz"]. " obtuvo " .$seleccionJuego[$numeroDeJuego]["puntosCruz"]. " puntos \n";
+        echo "Jugador O: " .$seleccionJuego[$numeroDeJuego]["puntosCirculo"]. " obtuvo " .$seleccionJuego[$numeroDeJuego]["puntosCirculo"]. " puntos \n";
+        echo "******************************\n";
+    } elseif ($seleccionJuego[$numeroDeJuego]["puntosCirculo"] > $seleccionJuego[$numeroDeJuego]["puntosCruz"]) {
+        echo "******************************\n";
+        echo "Juego TATETI: " .$numeroDeJuego. " (ganó O)\n";
+        echo "Jugador X: " .$seleccionJuego[$numeroDeJuego]["puntosCruz"]. " obtuvo " .$seleccionJuego[$numeroDeJuego]["puntosCruz"]. " puntos \n";
+        echo "Jugador O: " .$seleccionJuego[$numeroDeJuego]["puntosCirculo"]. " obtuvo " .$seleccionJuego[$numeroDeJuego]["puntosCirculo"]. " puntos \n";
+        echo "******************************\n";
+    } else {
+        echo "******************************\n";
+        echo "Juego TATETI: " .$numeroDeJuego. " (empate)\n";
+        echo "Jugador X: " .$seleccionJuego[$numeroDeJuego]["puntosCruz"]. " obtuvo " .$seleccionJuego[$numeroDeJuego]["puntosCruz"]. " puntos \n";
+        echo "Jugador O: " .$seleccionJuego[$numeroDeJuego]["puntosCirculo"]. " obtuvo " .$seleccionJuego[$numeroDeJuego]["puntosCirculo"]. " puntos \n";
+        echo "******************************\n";
+    }
+}
+
+//$a = mostrarJuego(2, 5);
+//echo "" .$a;
 
 
 
@@ -145,16 +182,16 @@ echo "" .$a;
 
 
 
-/*
+/* 
 do {
-    $opcion = ...;
+   $opcion = ...;
 
     
     switch ($opcion) {
         case 1: 
             //completar qué secuencia de pasos ejecutar si el usuario elige la opción 1
 
-            break;
+            break; (por cada case debe existir un break)
         case 2: 
             //completar qué secuencia de pasos ejecutar si el usuario elige la opción 2
 

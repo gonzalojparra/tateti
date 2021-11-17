@@ -93,6 +93,10 @@ function cargarJuegos() {
     return $juegos;
 }
 
+//print_r (count($juegos));
+//array_push($juegos);
+//strval(count($juegos))
+
 /**
 * Este módulo va a mostrar por pantalla al usuario el menú.
 * @param void
@@ -126,11 +130,11 @@ function seleccionarOpcion() {
 */
 function mostrarJuego ($numeroDeJuego, $seleccionJuego) {
     
-    echo "Ingrese el número de juego que desea visualizar";
+    echo "Ingrese el número de juego que desea visualizar: ";
     $numeroDeJuego=trim(fgets(STDIN));
-    while (!($numeroDeJuego >= 0 && $numeroDeJuego <= 9)){
-        echo "El numero es invalido, debe ser un número entre el 0 y el 9";
-        echo "Vuelva a ingresar un número";
+    while (!($numeroDeJuego >= 0 && $numeroDeJuego <= 9)) {
+        echo "El número es invalido, debe ser un número entre el 0 y 9\n";
+        echo "Vuelva a ingresar un número: ";
         $numeroDeJuego = trim(fgets(STDIN));
     }
 
@@ -154,6 +158,20 @@ function mostrarJuego ($numeroDeJuego, $seleccionJuego) {
         echo "******************************\n";
     }
 }
+
+/**
+* Módulo que modifica una colección agregando un juego nuevo 
+* @param array $coleccionDeJuegos
+* @param array $unJuego
+* @return array
+*/
+function agregarJuego($juegos, $unJuego) {
+    // int $numArray
+    $numArray = count($juegos);
+    $juegos[$numArray] = $unJuego;
+    return $juegos;
+}
+
 
 //$a = mostrarJuego(2, 5);
 //echo "" .$a;

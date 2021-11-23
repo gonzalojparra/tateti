@@ -22,73 +22,73 @@ include_once("tateti.php");
  */
 function cargarJuegos() {
 
-    //array $juegos
+    // array $juegos
     $juegos[0] = [ 
-        'jugadorCruz' => 'Emiliano',
-        'jugadorCirculo' => 'Agustin',
+        'jugadorCruz' => 'EMILIANO',
+        'jugadorCirculo' => 'AGUSTIN',
         'puntosCruz' => '5',
         'puntosCirculo' => '0',
     ];
 
     $juegos[1] = [ 
-        'jugadorCruz' => 'Gonzalo',
-        'jugadorCirculo' => 'Agustin',
+        'jugadorCruz' => 'GONZALO',
+        'jugadorCirculo' => 'AGUSTIN',
         'puntosCruz' => '6',
         'puntosCirculo' => '0',
     ];
 
     $juegos[2] = [ 
-        'jugadorCruz' => 'Agustin',
-        'jugadorCirculo' => 'Emiliano',
+        'jugadorCruz' => 'AGUSTIN',
+        'jugadorCirculo' => 'EMILIANO',
         'puntosCruz' => '1',
         'puntosCirculo' => '1',
     ];
 
     $juegos[3] = [ 
-        'jugadorCruz' => 'Gonzalo',
-        'jugadorCirculo' => 'Agustina',
+        'jugadorCruz' => 'GONZALO',
+        'jugadorCirculo' => 'AGUSTINA',
         'puntosCruz' => '2',
         'puntosCirculo' => '0',
     ];
 
     $juegos[4] = [ 
-        'jugadorCruz' => 'Agustina',
-        'jugadorCirculo' => 'Emiliano',
+        'jugadorCruz' => 'AGUSTINA',
+        'jugadorCirculo' => 'EMILIANO',
         'puntosCruz' => '5',
         'puntosCirculo' => '0',
     ];
 
     $juegos[5] = [ 
-        'jugadorCruz' => 'Agustina',
-        'jugadorCirculo' => 'Agustin',
+        'jugadorCruz' => 'AGUSTINA',
+        'jugadorCirculo' => 'AGUSTIN',
         'puntosCruz' => '0',
         'puntosCirculo' => '3',
     ];
 
     $juegos[6] = [ 
-        'jugadorCruz' => 'Emiliana',
-        'jugadorCirculo' => 'Agustin',
+        'jugadorCruz' => 'EMILIANA',
+        'jugadorCirculo' => 'AGUSTIN',
         'puntosCruz' => '0',
         'puntosCirculo' => '5',
     ];
 
     $juegos[7] = [ 
-        'jugadorCruz' => 'Emiliano',
-        'jugadorCirculo' => 'Agustin',
+        'jugadorCruz' => 'EMILIANO',
+        'jugadorCirculo' => 'AGUSTIN',
         'puntosCruz' => '1',
         'puntosCirculo' => '1',
     ];
 
     $juegos[8] = [ 
-        'jugadorCruz' => 'Emiliana',
-        'jugadorCirculo' => 'Emiliano',
+        'jugadorCruz' => 'EMILIANA',
+        'jugadorCirculo' => 'EMILIANO',
         'puntosCruz' => '0',
         'puntosCirculo' => '4',
     ];
 
     $juegos[9] = [ 
-        'jugadorCruz' => 'Emiliana',
-        'jugadorCirculo' => 'Gonzalo',
+        'jugadorCruz' => 'EMILIANA',
+        'jugadorCirculo' => 'GONZALO',
         'puntosCruz' => '1',
         'puntosCirculo' => '1',
     ];
@@ -106,6 +106,7 @@ function cargarJuegos() {
 */
 function seleccionarOpcion() {
     
+    // int $numero
     echo "MENU DEL JUEGO\n";
     echo "1) Jugar al tateti\n";
     echo "2) Mostrar un juego\n";
@@ -130,6 +131,8 @@ function seleccionarOpcion() {
  * @return int
  */
 function validarNumero ($valor1, $valor2) {
+
+    // int $numeroIngresado
     do {
         echo "Ingrese un numero entre " .$valor1. " y " .$valor2. ": ";
         $numeroIngresado = trim(fgets(STDIN));
@@ -156,28 +159,28 @@ function mostrarJuego ($numeroDeJuego, $seleccionJuego) {
         $numeroDeJuego = trim(fgets(STDIN));
     }*/
 
-    if ($seleccionJuego[$numeroDeJuego]["puntosCruz"] > $seleccionJuego[$numeroDeJuego]["puntosCirculo"]) {
+    if ($seleccionJuego[$numeroDeJuego]['puntosCruz'] > $seleccionJuego[$numeroDeJuego]['puntosCirculo']) {
         echo "\n"; //Salto de línea para mayor legibilidad
         echo "******************************\n";
         echo "Juego TATETI: " .$numeroDeJuego. " (ganó X)\n";
-        echo "Jugador X: " .$seleccionJuego[$numeroDeJuego]["puntosCruz"]. " obtuvo " .$seleccionJuego[$numeroDeJuego]["puntosCruz"]. " puntos \n";
-        echo "Jugador O: " .$seleccionJuego[$numeroDeJuego]["puntosCirculo"]. " obtuvo " .$seleccionJuego[$numeroDeJuego]["puntosCirculo"]. " puntos \n";
+        echo "Jugador X: " .$seleccionJuego[$numeroDeJuego]['puntosCruz']. " obtuvo " .$seleccionJuego[$numeroDeJuego]['puntosCruz']. " puntos \n";
+        echo "Jugador O: " .$seleccionJuego[$numeroDeJuego]['puntosCirculo']. " obtuvo " .$seleccionJuego[$numeroDeJuego]['puntosCirculo']. " puntos \n";
         echo "******************************\n";
         echo "\n"; //Salto de línea para mayor legibilidad
-    } elseif ($seleccionJuego[$numeroDeJuego]["puntosCirculo"] > $seleccionJuego[$numeroDeJuego]["puntosCruz"]) {
+    } elseif ($seleccionJuego[$numeroDeJuego]['puntosCirculo'] > $seleccionJuego[$numeroDeJuego]['puntosCruz']) {
         echo "\n"; //Salto de línea para mayor legibilidad
         echo "******************************\n";
         echo "Juego TATETI: " .$numeroDeJuego. " (ganó O)\n";
-        echo "Jugador X: " .$seleccionJuego[$numeroDeJuego]["puntosCruz"]. " obtuvo " .$seleccionJuego[$numeroDeJuego]["puntosCruz"]. " puntos \n";
-        echo "Jugador O: " .$seleccionJuego[$numeroDeJuego]["puntosCirculo"]. " obtuvo " .$seleccionJuego[$numeroDeJuego]["puntosCirculo"]. " puntos \n";
+        echo "Jugador X: " .$seleccionJuego[$numeroDeJuego]['puntosCruz']. " obtuvo " .$seleccionJuego[$numeroDeJuego]['puntosCruz']. " puntos \n";
+        echo "Jugador O: " .$seleccionJuego[$numeroDeJuego]['puntosCirculo']. " obtuvo " .$seleccionJuego[$numeroDeJuego]['puntosCirculo']. " puntos \n";
         echo "******************************\n";
         echo "\n"; //Salto de línea para mayor legibilidad
     } else {
         echo "\n"; //Salto de línea para mayor legibilidad
         echo "******************************\n";
         echo "Juego TATETI: " .$numeroDeJuego. " (empate)\n";
-        echo "Jugador X: " .$seleccionJuego[$numeroDeJuego]["puntosCruz"]. " obtuvo " .$seleccionJuego[$numeroDeJuego]["puntosCruz"]. " puntos \n";
-        echo "Jugador O: " .$seleccionJuego[$numeroDeJuego]["puntosCirculo"]. " obtuvo " .$seleccionJuego[$numeroDeJuego]["puntosCirculo"]. " puntos \n";
+        echo "Jugador X: " .$seleccionJuego[$numeroDeJuego]['puntosCruz']. " obtuvo " .$seleccionJuego[$numeroDeJuego]['puntosCruz']. " puntos \n";
+        echo "Jugador O: " .$seleccionJuego[$numeroDeJuego]['puntosCirculo']. " obtuvo " .$seleccionJuego[$numeroDeJuego]['puntosCirculo']. " puntos \n";
         echo "******************************\n";
         echo "\n"; //Salto de línea para mayor legibilidad
     }
@@ -190,6 +193,7 @@ function mostrarJuego ($numeroDeJuego, $seleccionJuego) {
 * @return array
 */
 function agregarJuego($juegos, $unJuego) {
+
     // int $numArray
     $numArray = count($juegos);
     $juegos[$numArray] = $unJuego;
@@ -203,6 +207,9 @@ function agregarJuego($juegos, $unJuego) {
  * @return int
  */
 function primerJuegoGanado ($coleccionJuegos, $nombreJugador) {
+
+    // int $i, $primerGanado
+    // boolean $bandera
     $i = 0;
     $bandera = false;
     $primerGanado = -1;
@@ -215,12 +222,17 @@ function primerJuegoGanado ($coleccionJuegos, $nombreJugador) {
             $primerGanado = $i;
         }
         $i++;
-    } while (($i < (count($coleccionJuegos))) && $bandera);
+    } while ($i < (count($coleccionJuegos)) && !$bandera);
     return $primerGanado;
 }
 
-
-
+/**
+ * Este módulo recibe una colección de juegos y el nombre de un jugador y retorna el resumen del jugador
+ * @param array $listadoDeJuegos
+ * @param string $nombreJugadorResumen
+ */
+function resumenJugador ($listadoDeJuegos, $nombreJugadorResumen) {
+}
 
 
 
@@ -228,42 +240,44 @@ function primerJuegoGanado ($coleccionJuegos, $nombreJugador) {
 /*********** PROGRAMA PRINCIPAL *******/
 /**************************************/
 
-//Declaración de variables:
-
-
-
+/** Declaración de variables:
+ * array $juegoNuevo, $listaDeJuegos
+ * int $opcion, $numJuego, $valorUno, $valorDos, $numeroDeGanador
+ * string $jugadorGanador
+*/
 
 //Inicialización de variables:
 //Se cargan los 10 juegos a la lista
 $listaDeJuegos = cargarJuegos();
+
 //Proceso:
 
 do {
     $opcion = seleccionarOpcion();
-    switch ($opcion) {
+    switch ($opcion) { // Se utiliza switch, el cual es una estructura de control similar al if, sirve para comparar la misma variable con valores diferentes
         case 1: 
-            //Jugar al tateti
+            // Jugar al tateti
             $juegoNuevo = jugar();
             imprimirResultado($juegoNuevo);
-            //Almacenar juego en la base de datos
+            // Almacenar juego en la base de datos
             $listaDeJuegos = agregarJuego($listaDeJuegos, $juegoNuevo);
             break;
         case 2:
-            //Mostrar un juego
+            // Mostrar un juego
             if (count($listaDeJuegos) > 0) {
                 $valorUno = 0;
                 $valorDos = (count($listaDeJuegos) - 1);
                 $numJuego = validarNumero($valorUno, $valorDos);
-                //Mostrar el juego pedido
+                // Mostrar el juego pedido
                 mostrarJuego($numJuego, $listaDeJuegos);
             } else {
-                echo "No hay ningún juego registrado.\n";
+                echo "No se ha registrado ningún juego.\n";
             }
             break;
         case 3:
-            //Mostrar el primer juego ganado
+            // Mostrar el primer juego ganado
             if (count($listaDeJuegos) > 0) {
-                echo "Ingrese el nombre del Jugador a buscar: ";
+                echo "Ingrese el nombre del jugador a buscar: ";
                 $jugadorGanador = trim(fgets(STDIN));
                 $jugadorGanador = strtoupper($jugadorGanador);
                 $numeroDeGanador = primerJuegoGanado($listaDeJuegos, $jugadorGanador);
@@ -275,13 +289,13 @@ do {
                     echo "\n"; //Salto de línea para mayor legibilidad
                 }
             } else {
-                echo "No hay ningún juego registrado.\n";
+                echo "No se ha registrado ningún juego.\n";
             }
             break;
         case 4:
-            //Mostrar porcentaje de juegos ganados
+            // Mostrar porcentaje de juegos ganados
         case 7:
-            //Muestra cartel de finalización de juego
+            // Muestra cartel de finalización de juego
             echo "TATETI FINALIZADO.";
     }
  } while ($opcion != 7);

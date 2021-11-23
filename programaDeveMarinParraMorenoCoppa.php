@@ -230,9 +230,121 @@ function primerJuegoGanado ($coleccionJuegos, $nombreJugador) {
  * Este módulo recibe una colección de juegos y el nombre de un jugador y retorna el resumen del jugador
  * @param array $listadoDeJuegos
  * @param string $nombreJugadorResumen
+ * @return array
  */
 function resumenJugador ($listadoDeJuegos, $nombreJugadorResumen) {
+
+    // array $resumenDelJugador
+    $resumenDelJugador = [
+        "nombre" => "",
+        "juegoGanado" => 0,
+        "juegoPerdido" => 0,
+        "juegoEmpatado" => 0,
+        "puntoAcumulado" => 0 
+    ];
+    // string $nombre
+    // int $juegosGanados, $juegosPerdidos, $juegosEmpatados, $puntosAcumulados
+    $nombre = "";
+    $juegosGanados = 0;
+    $juegosPerdidos = 0;
+    $juegosEmpatados = 0;
+    $puntosAcumulados = 0;
+    for ($y = 0; $y < count($listadoDeJuegos); $y++) {
+        if ($listadoDeJuegos[$y]['jugadorCruz'] == $nombreJugadorResumen) {
+            if ($listadoDeJuegos[$y]['puntosCruz'] > $listadoDeJuegos[$y]['puntosCirculo']) {
+                $juegosGanados++;
+            } elseif ($listadoDeJuegos[$y]['puntosCruz'] == $listadoDeJuegos[$y]['puntosCirculo']) {
+                $juegosEmpatados++;
+            } elseif ($listadoDeJuegos[$y]['puntosCruz'] < $listadoDeJuegos[$y]['puntosCirculo']) {
+                $juegosPerdidos++;
+            }
+            $puntosAcumulados = $puntosAcumulados + $listadoDeJuegos[$y]['puntosCruz'];
+        } elseif ($listadoDeJuegos[$y]['jugadorCirculo'] == $nombreJugadorResumen) {
+            if ($listadoDeJuegos[$y]['puntosCirculo'] > $listadoDeJuegos[$y]['puntosCruz']) {
+                $juegosGanados++;
+            } elseif ($listadoDeJuegos[$y]['puntosCirculo'] == $listadoDeJuegos[$y]['puntosCruz']) {
+                $juegosEmpatados++;
+            } elseif ($listadoDeJuegos[$y]['puntosCirculo'] < $listadoDeJuegos[$y]['puntosCruz']) {
+                $juegosPerdidos++;
+            }
+            $puntosAcumulados = $puntosAcumulados + $listadoDeJuegos[$y]['puntosCirculo'];
+        }
+    }
+    $resumenDelJugador["nombre"] = $nombre;
+    $resumenDelJugador["juegoGanado"] = $juegosGanados;
+    $resumenDelJugador["juegoPerdido"] = $juegosPerdidos;
+    $resumenDelJugador["juegoEmpatado"] = $juegosEmpatados;
+    $resumenDelJugador["puntoAcumulado"] = $puntosAcumulados;
+
+    return $resumenDelJugador;
 }
+
+/**
+ * Este módulo muestra como cartel el resumen del jugador recibiendo el array de la función anterior (resumenJugador)
+ * @param array $resumenDelJugador
+ * @return void
+ */
+function mostarResumen($resumenDelJugador) {
+
+    echo "\n"; //Salto de línea para mayor legibilidad
+    echo "******************************\n";
+    echo "Jugador: " .$resumenDelJugador["nombre"]. "\n";
+    echo "Ganó: " .$resumenDelJugador["juegoGanado"]. "\n";
+    echo "Perdió: " .$resumenDelJugador["juegoPerdido"]. "\n";
+    echo "Empató: " .$resumenDelJugador["juegoEmpatado"]. "\n";
+    echo "Total de puntos acumulados: " .$resumenDelJugador["puntoAcumulado"]. "\n";
+    echo "******************************\n";
+    echo "\n"; //Salto de línea para mayor legibilidad
+}
+
+/**
+ * Esta función pide al usuario ingresar un símbolo, obligatoriamente debe ser X/O
+ * @param void
+ * @return string
+ */
+function simboloXO () {
+
+    // boolean $validacion
+    // string $simbolo
+    // La variable $validacion la inicializaremos en true para que cuando la condición nos de falso salgamos del while con el resultado
+    $validacion = true;
+    echo "Ingrese un símbolo (debe ser X/O): ";
+    $simbolo = trim(fgets(STDIN));
+    // Aquí usaremos la función strtoupper en caso de que ingresen el símbolo en minúscula, para que se convierta en una mayúscula
+    $simbolo = strtoupper($simbolo);
+    while ($validacion) {
+        if ($simbolo == "O") {
+            $validacion = false;
+        } elseif ($simbolo == "X") {
+            $validacion = false;
+        } else {
+            echo "Ingrese un símbolo válido, ya sea X/O: ";
+            $simbolo = trim(fgets(STDIN));
+        }
+    }
+    return $simbolo;
+}
+
+/**
+ * Esta función retorna la cantidad de juegos ganados según una colección de juegos
+ * @param array $juegosDelTateti
+ * @return int
+ */
+function cantJuegosGanados ($juegosDelTateti) {
+
+    // int $cantidadDeJuegosGanados
+    $cantidadDeJuegosGanados = 0;
+    for ($c = 0; $c < count($juegosDelTateti); $c++) {
+        if ($juegosDelTateti[$c]["puntosCruz"] != 1 && $juegosDelTateti[$c]["puntosCirculo"] != 1) {
+            $cantidadDeJuegosGanados++;
+        }
+    }
+    return $cantidadDeJuegosGanados;
+}
+
+
+
+
 
 
 

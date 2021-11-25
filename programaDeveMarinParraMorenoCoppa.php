@@ -92,6 +92,21 @@ function cargarJuegos() {
         'puntosCruz' => '1',
         'puntosCirculo' => '1',
     ];
+    $juegos = [];
+
+$jg1 = ["jugadorCruz" => "AMARILIS", "jugadorCirculo" => "MILOS",    "puntosCruz" => 1, "puntosCirculo" => 1];
+$jg2 = ["jugadorCruz" => "ZENDA",    "jugadorCirculo" => "AMARILIS", "puntosCruz" => 3, "puntosCirculo" => 0];
+$jg3 = ["jugadorCruz" => "ZENDA",    "jugadorCirculo" => "MILOS",    "puntosCruz" => 0, "puntosCirculo" => 4];
+$jg4 = ["jugadorCruz" => "CALIXTO",  "jugadorCirculo" => "TRUMAN",   "puntosCruz" => 1, "puntosCirculo" => 1];
+$jg5 = ["jugadorCruz" => "AMARILIS", "jugadorCirculo" => "MILOS",    "puntosCruz" => 5, "puntosCirculo" => 0];
+$jg6 = ["jugadorCruz" => "FEDORA",   "jugadorCirculo" => "CALIXTO",  "puntosCruz" => 0, "puntosCirculo" => 3];
+$jg7 = ["jugadorCruz" => "TRUMAN",   "jugadorCirculo" => "AMARILIS", "puntosCruz" => 4, "puntosCirculo" => 0];
+$jg8 = ["jugadorCruz" => "CALIXTO",  "jugadorCirculo" => "TRUMAN",   "puntosCruz" => 1, "puntosCirculo" => 1];
+$jg9 = ["jugadorCruz" => "TRUMAN",   "jugadorCirculo" => "FEDORA",   "puntosCruz" => 2, "puntosCirculo" => 0];
+$jg10= ["jugadorCruz" => "MILOS",    "jugadorCirculo" => "ZENDA",   "puntosCruz" => 1, "puntosCirculo" => 1];
+
+array_push($juegos, $jg1, $jg2, $jg3, $jg4, $jg5, $jg6, $jg7, $jg8, $jg9, $jg10);
+
     return $juegos;
 }
 
@@ -150,27 +165,27 @@ function mostrarJuego ($numeroDeJuego, $listaDeJuegos) {
 
     if ($listaDeJuegos[$numeroDeJuego]['puntosCruz'] > $listaDeJuegos[$numeroDeJuego]['puntosCirculo']) {
         echo "\n"; //Salto de línea para mayor legibilidad
-        echo "******************************\n";
+        echo "***********************************\n";
         echo "Juego TATETI: " .$numeroDeJuego. " (ganó X)\n";
-        echo "Jugador X: " .$listaDeJuegos[$numeroDeJuego]['puntosCruz']. " obtuvo " .$listaDeJuegos[$numeroDeJuego]['puntosCruz']. " puntos \n";
-        echo "Jugador O: " .$listaDeJuegos[$numeroDeJuego]['puntosCirculo']. " obtuvo " .$listaDeJuegos[$numeroDeJuego]['puntosCirculo']. " puntos \n";
-        echo "******************************\n";
+        echo "Jugador X " .$listaDeJuegos[$numeroDeJuego]['jugadorCruz']. ": obtuvo " .$listaDeJuegos[$numeroDeJuego]['puntosCruz']. " puntos \n";
+        echo "Jugador O " .$listaDeJuegos[$numeroDeJuego]['jugadorCirculo']. ": obtuvo " .$listaDeJuegos[$numeroDeJuego]['puntosCirculo']. " puntos \n";
+        echo "***********************************\n";
         echo "\n"; //Salto de línea para mayor legibilidad
     } elseif ($listaDeJuegos[$numeroDeJuego]['puntosCirculo'] > $listaDeJuegos[$numeroDeJuego]['puntosCruz']) {
         echo "\n"; //Salto de línea para mayor legibilidad
-        echo "******************************\n";
+        echo "***********************************\n";
         echo "Juego TATETI: " .$numeroDeJuego. " (ganó O)\n";
-        echo "Jugador X: " .$listaDeJuegos[$numeroDeJuego]['puntosCruz']. " obtuvo " .$listaDeJuegos[$numeroDeJuego]['puntosCruz']. " puntos \n";
-        echo "Jugador O: " .$listaDeJuegos[$numeroDeJuego]['puntosCirculo']. " obtuvo " .$listaDeJuegos[$numeroDeJuego]['puntosCirculo']. " puntos \n";
-        echo "******************************\n";
+        echo "Jugador X " .$listaDeJuegos[$numeroDeJuego]['jugadorCruz']. ": obtuvo " .$listaDeJuegos[$numeroDeJuego]['puntosCruz']. " puntos \n";
+        echo "Jugador O " .$listaDeJuegos[$numeroDeJuego]['jugadorCirculo']. ": obtuvo " .$listaDeJuegos[$numeroDeJuego]['puntosCirculo']. " puntos \n";
+        echo "***********************************\n";
         echo "\n"; //Salto de línea para mayor legibilidad
     } else {
         echo "\n"; //Salto de línea para mayor legibilidad
-        echo "******************************\n";
+        echo "***********************************\n";
         echo "Juego TATETI: " .$numeroDeJuego. " (empate)\n";
-        echo "Jugador X: " .$listaDeJuegos[$numeroDeJuego]['puntosCruz']. " obtuvo " .$listaDeJuegos[$numeroDeJuego]['puntosCruz']. " puntos \n";
-        echo "Jugador O: " .$listaDeJuegos[$numeroDeJuego]['puntosCirculo']. " obtuvo " .$listaDeJuegos[$numeroDeJuego]['puntosCirculo']. " puntos \n";
-        echo "******************************\n";
+        echo "Jugador X " .$listaDeJuegos[$numeroDeJuego]['jugadorCruz']. ": obtuvo " .$listaDeJuegos[$numeroDeJuego]['puntosCruz']. " puntos \n";
+        echo "Jugador O " .$listaDeJuegos[$numeroDeJuego]['jugadorCirculo']. ": obtuvo " .$listaDeJuegos[$numeroDeJuego]['puntosCirculo']. " puntos \n";
+        echo "***********************************\n";
         echo "\n"; //Salto de línea para mayor legibilidad
     }
 }

@@ -373,8 +373,8 @@ function ganadosSimbolo ($listaDeJuegos, $simbol) {
 }
 
 /**
- * Este módulo recibe dos string y los compara de menor a mayor, retorna -1 si ($a < $b), 1 si ($a > $b) y 0 si ambos son iguales
- * @param string $a, $b
+ * Este módulo recibe dos arrays y los compara de menor a mayor, retorna -1 si ($a < $b), 1 si ($a > $b) y 0 si ambos son iguales
+ * @param array $a, $b
  * @return int
  */
 function ordenarJugadorCirculo ($a, $b) {

@@ -95,10 +95,6 @@ function cargarJuegos() {
     return $juegos;
 }
 
-//print_r (count($juegos));
-//array_push($juegos);
-//strval(count($juegos))
-
 /**
 * Este módulo va a mostrar por pantalla al usuario el menú.
 * @param void
@@ -116,12 +112,13 @@ function seleccionarOpcion() {
     echo "6) Mostrar listado de juegos ordenado por jugador O\n";
     echo "7) Salir\n";
     echo "Ingrese la opción en la que desea ingresar: ";
-    $numero = trim(fgets(STDIN));
-    if (is_string($numero) && !($numero >= 1 && $numero <= 7)) {
+    $numero = solicitarNumeroEntre(1, 7);
+    /*$numero = trim(fgets(STDIN));
+    while (!is_int($numero) && !($numero >= 1 && $numero <= 7)) {
         echo "¡Opción inválida! Debe ser un número entre el 1 y 7\n";
         echo "Vuelva a ingresar el número: ";
         $numero = trim(fgets(STDIN));
-    }
+    }*/
     return $numero;	
 }
 
@@ -361,7 +358,7 @@ function ganadosSimbolo ($listaDeJuegos, $simbol) {
 }
 
 /**
- * Este módulo recibe dos string y los compara de menor a mayor, retorna -1 si $a < $b, 1 si $a > $b y 0 si si son iguales
+ * Este módulo recibe dos string y los compara de menor a mayor, retorna -1 si ($a < $b), 1 si ($a > $b) y 0 si ambos son iguales
  * @param string $a, $b
  * @return int
  */
@@ -375,7 +372,6 @@ function ordenarJugadorCirculo ($a, $b) {
 /**
  * Este módulo recibe una colección de juegos y los ordena alfabéticamente en base al jugador O
  * @param array $listaDeJuegos
- * @param int $ordJugadorO
  * @return void
  */
 function juegosOrdenadosO ($listaDeJuegos) {
@@ -401,7 +397,6 @@ function juegosOrdenadosO ($listaDeJuegos) {
 $listaDeJuegos = cargarJuegos();
 
 //Proceso:
-
 do {
     $opcion = seleccionarOpcion();
     switch ($opcion) { // Se utiliza switch, el cual es una estructura de control similar al if, sirve para comparar la misma variable con valores diferentes
@@ -447,8 +442,10 @@ do {
             $simboloJugador = simboloXO();
             $cantidadGanadosSimbolo = ganadosSimbolo($listaDeJuegos, $simboloJugador);
             $cantJuegos = cantJuegosGanados($listaDeJuegos);
-            $porcentajeGanados = ($cantidadGanadosSimbolo / $cantJuegos) * 100;
+            $porcentajeGanados = round(($cantidadGanadosSimbolo / $cantJuegos) * 100);
+            echo "\n"; //Salto de línea para mayor legibilidad
             echo "El jugador " .$simboloJugador. " ganó el " .$porcentajeGanados. "% de juegos.\n";
+            echo "\n"; //Salto de línea para mayor legibilidad
             break;
         case 5:
             // Mostrar resumen de un jugador
